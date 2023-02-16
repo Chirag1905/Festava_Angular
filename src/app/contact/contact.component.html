@@ -1,0 +1,114 @@
+<section class="contact-section section-padding" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-12 mx-auto">
+        <h2 class="text-center mb-4">Interested? Let's talk</h2>
+
+        <nav class="d-flex justify-content-center">
+          <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+              data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm"
+              aria-selected="false">
+              <h5>Contact Form</h5>
+            </button>
+
+            <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactMap"
+              type="button" role="tab" aria-controls="nav-ContactMap" aria-selected="false">
+              <h5>Google Maps</h5>
+            </button>
+          </div>
+        </nav>
+
+        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+            aria-labelledby="nav-ContactForm-tab">
+            <form class="custom-form contact-form mb-5 mb-lg-0" [formGroup]="contactForm"
+              (ngSubmit)="contactFormSubmited()">
+              <div class="contact-form-body">
+                <div class="row">
+                  <div>
+                    <input type="text" name="contact-fname" formControlName="fname" id="fname" class="form-control"
+                      placeholder="First Name" ngModel />
+                  </div>
+                  <span class="form-text text-danger" *ngIf="fname.invalid && fname.touched">
+                    First Name Required
+                  </span><br /><br>
+                  <div>
+                    <input type="text" name="contact-lname" formControlName="lname" id="lname" class="form-control"
+                      placeholder="Last Name" ngModel />
+                  </div>
+                  <span class="form-text text-danger" *ngIf="lname.invalid && lname.touched">
+                    Last Name Required
+                  </span><br /><br>
+                  <div>
+                    <input type="email" pattern="[^ @]*@[^ @]*" name="contact-email" formControlName="email" id="email"
+                      class="form-control" placeholder="Email address" ngModel />
+                  </div>
+                  <span class="form-text text-danger" *ngIf="email.invalid && email.touched">
+                    email field cannot be empty
+                  </span><br /><br>
+                  <div>
+                    <input type="password" name="contact-password" formControlName="password" id="contact-password"
+                      class="form-control" placeholder="Enter Your Password" ngModel />
+                  </div>
+                  <span class="form-text text-danger" *ngIf="password.invalid && password.touched">
+                    Password Required
+                  </span><br /><br>
+                  <div>
+                    <input type="tel" minlength="8" maxlength="10" name="contact-number1" formControlName="number1"
+                      id="contact-number1" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control"
+                      placeholder="Enter Your Phone Number" ngModel />
+                  </div>
+                  <span class="form-text text-danger" *ngIf="number1.invalid && number1.touched">
+                    Please Enter Your Phone Number
+                  </span><br /><br>
+                  <div>
+                    <input type="tel" minlength="8" maxlength="10" name="contact-number2" formControlName="number2"
+                      id="contact-number2" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control"
+                      placeholder="Enter Your Mobile Number" ngModel />
+                  </div>
+                  <span class="form-text text-danger" *ngIf="number2.invalid && number2.touched">
+                    Please Enter Your Mobile Number
+                  </span><br /><br>
+                  <div>
+                    <textarea name="contact-address" rows="3" class="form-control" formControlName="address"
+                      id="contact-address" placeholder="Enter Your Address" ngModel></textarea>
+                  </div>
+                  <span class="form-text text-danger" *ngIf="address.invalid && address.touched">
+                    Please Enter Your Address
+                  </span><br /><br>
+                  <div>
+                    <label for="date">Birthdate : </label><br /><br />
+                    <input type="date" name="contact-dob" formControlName="dob" id="contact-dob" class="form-control"
+                      placeholder="Enter Your Mobile Number" ngModel />
+                  </div>
+                  <div>
+                    <label for="gender">Gender : </label><br /><br />
+                    <section>
+                      <input type="radio" formControlName="gender" id="gender" name="gender" value="male" />Male
+                      <input type="radio" formControlName="gender" id="gender" name="gender" value="female" />Female
+                    </section>
+                    <br /><br />
+                  </div>
+                  <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                    <button type="submit" class="form-control" class="btn btn-success">
+                      Send message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel" aria-labelledby="nav-ContactMap-tab">
+            <iframe class="google-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29974.469402870927!2d120.94861466021855!3d14.106066818082482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd777b1ab54c8f%3A0x6ecc514451ce2be8!2sTagaytay%2C%20Cavite%2C%20Philippines!5e1!3m2!1sen!2smy!4v1670344209509!5m2!1sen!2smy"
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
